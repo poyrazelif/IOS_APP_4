@@ -20,22 +20,43 @@ extension UIView
 }
 extension LoginVC: UIPickerViewDelegate
 {
-    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        if(pickerView.tag == 0 )
+        {
+           return self.CityData[row].name
+        }
+        return self.CityData[currentCityIndex].states[row]
+    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if(pickerView.tag == 0 )
+        {
+            txtCity.text = CityData[row].name
+            currentCityIndex = row
+        }
+        else{
+            txtState.text = CityData[currentCityIndex].states[row]
+        }
+        self.view.endEditing(true)
+        
+        
+    }
 }
 extension LoginVC: UIPickerViewDataSource
 {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        <#code#>
+        1
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        <#code#>
+        if(pickerView.tag == 0 )
+        {
+            return CityData.count
+        }
+        return CityData[currentCityIndex].states.count
+            
     }
-    
-    
-//
-//
 }
+
 protocol SifreYenileme
 {
     func SifreDegistir(YeniSifre:String?)
@@ -43,9 +64,13 @@ protocol SifreYenileme
 
 class LoginVC: UIViewController, UITextFieldDelegate {
 
-    var closure = {
-    }
+    var CityData:[City] = [City(name: "Ankara", states: ["Keçiören","Kızılay","Çankaya"]),
+                           City(name: "İstanbul", states: ["Kadıköy","Sarıyer","Bakırköy"]),
+                           City(name: "Balıkesir", states: ["Susurluk","Edremit","Erdek"]),
+                           City(name: "Kocaeli", states: ["Gebze","Derince","Gölcük"])]
+    
     var ActiveUser = (userName: "ElifP", userPassword: "1234")
+    var currentCityIndex = 0
     
     private lazy var imgHeader: UIImageView = {
         let iv = UIImageView()
@@ -164,16 +189,88 @@ class LoginVC: UIViewController, UITextFieldDelegate {
         return sv
     }()
     //----------------------------------------------------
+    private lazy var lblCityTitle: CustomLabel = {
+        let l = CustomLabel()
+        l.text = "City"
+        l.textAlignment = .left
+        l.font = UIFont(name: CustomFont.Exo2Regular.rawValue, size: 12)
+        
+        return l
+    }()
+    private lazy var txtCity:CustomTextField =
+    {
+        let tf = CustomTextField()
+        tf.placeholder="Cities"
+        
+        tf.LeftViewImageSystemName = "lock.fill"
+        tf.leftViewMode = .always
+        tf.delegate = self
+        tf.inputView = CityPicker
+        return tf
+    }()
+    private lazy var svCity:UIStackView =
+    {
+        let sv = UIStackView()
+        sv.distribution = .fillProportionally
+        sv.alignment = .center
+        sv.spacing = 2
+        sv.axis = .vertical
+        
+        return sv
+    }()
     private lazy var CityPicker: UIPickerView = {
         var pv = UIPickerView()
 
         pv = UIPickerView()
-      //  pv.dataSource = self
+        pv.dataSource = self
         pv.delegate = self
+        pv.tag = 0
         
         return pv
     }()
     
+    //----------------------------------------------------
+    private lazy var lblCityStateTitle: CustomLabel = {
+        let l = CustomLabel()
+        l.text = "State"
+        l.textAlignment = .left
+        l.font = UIFont(name: CustomFont.Exo2Regular.rawValue, size: 12)
+        
+        return l
+    }()
+    private lazy var txtState:CustomTextField =
+    {
+        let tf = CustomTextField()
+        tf.placeholder="State"
+        
+        tf.LeftViewImageSystemName = "lock.fill"
+        tf.leftViewMode = .always
+        tf.delegate = self
+        tf.inputView = StatePicker
+        return tf
+    }()
+    private lazy var svState:UIStackView =
+    {
+        let sv = UIStackView()
+        sv.distribution = .fillProportionally
+        sv.alignment = .center
+        sv.spacing = 2
+        sv.axis = .vertical
+        
+        return sv
+    }()
+    private lazy var StatePicker: UIPickerView = {
+        var pv = UIPickerView()
+
+        pv = UIPickerView()
+        pv.dataSource = self
+        pv.delegate = self
+        pv.tag = 1
+        
+        return pv
+    }()
+    
+    //----------------------------------------------------
     private lazy var lblSignUpTitle: CustomLabel = {
         let l = CustomLabel()
         l.text = "Bir Hesabınız Yok mu?"
@@ -263,7 +360,7 @@ class LoginVC: UIViewController, UITextFieldDelegate {
 
     func AddSubViews()
     {
-        self.view.addSubviews(lblWelcome,lblSubtitle,svUsername,svPassword,svEmail,stackView,buttonNext,buttonForgotPassword)
+        self.view.addSubviews(lblWelcome,lblSubtitle,svUsername,svPassword,svEmail,svCity,svState,stackView,buttonNext,buttonForgotPassword)
         svUsername.addArrangedSubview(lblUserNameTitle)
         svUsername.addArrangedSubview(txtUserName)
         
@@ -272,6 +369,12 @@ class LoginVC: UIViewController, UITextFieldDelegate {
         
         svEmail.addArrangedSubview(lblEmailTitle)
         svEmail.addArrangedSubview(txtEmail)
+        
+        svCity.addArrangedSubview(lblCityTitle)
+        svCity.addArrangedSubview(txtCity)
+        
+        svState.addArrangedSubview(lblCityStateTitle)
+        svState.addArrangedSubview(txtState)
         
         stackView.addArrangedSubview(lblSignUpTitle)
         stackView.addArrangedSubview(buttonSignUp)
@@ -315,9 +418,24 @@ class LoginVC: UIViewController, UITextFieldDelegate {
         lblEmailTitle.edgesToSuperview(excluding: [.top,.bottom] , insets: .left(16) + .right(16))
         txtEmail.edgesToSuperview(excluding: [.top,.bottom] , insets: .left(16) + .right(16))
         
+        svCity.topToBottom(of: svEmail,offset: 15)
+        svCity.edgesToSuperview(excluding: [.top,.bottom] , insets: .left(16) + .right(16))
+        svCity.height(80)
+        
+        lblCityTitle.edgesToSuperview(excluding: [.top,.bottom] , insets: .left(16) + .right(16))
+        txtCity.edgesToSuperview(excluding: [.top,.bottom] , insets: .left(16) + .right(16))
+        
+        svState.topToBottom(of: svCity,offset: 15)
+        svState.edgesToSuperview(excluding: [.top,.bottom] , insets: .left(16) + .right(16))
+        svState.height(80)
+        
+        lblCityStateTitle.edgesToSuperview(excluding: [.top,.bottom] , insets: .left(16) + .right(16))
+        txtState.edgesToSuperview(excluding: [.top,.bottom] , insets: .left(16) + .right(16))
+        
+        
         buttonForgotPassword.snp.makeConstraints({make in
-            make.top.equalTo(svEmail.snp.bottom).offset(5)
-            make.leading.equalTo(svEmail.snp.leading).offset(5)
+            make.top.equalTo(svState.snp.bottom).offset(5)
+            make.leading.equalTo(svState.snp.leading).offset(5)
         })
         
         buttonNext.snp.makeConstraints({make in
@@ -336,6 +454,9 @@ class LoginVC: UIViewController, UITextFieldDelegate {
         
        
     }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+            self.view.endEditing(true)
+        }
 
 }
 extension LoginVC: SifreYenileme
