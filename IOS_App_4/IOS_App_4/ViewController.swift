@@ -40,9 +40,9 @@ class ViewController: UIViewController {
     private lazy var txtPhone:CustomTextField =
     {
         let tf = CustomTextField()
-        tf.placeholder="Şifre girin"
+        tf.placeholder="+90 (XXX) XXX XX XX"
         //tf.fontSize = 12
-        
+        tf.text = "+90"
         tf.LeftViewImageSystemName = "lock.fill"
         tf.leftViewMode = .always
         tf.delegate = self
@@ -138,8 +138,9 @@ extension ViewController: UITextFieldDelegate
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         guard let text = textField.text else {return false}
         let newSt = (text as NSString).replacingCharacters(in: range, with: string)
-        let formattedString = PhoneFormatter(mask: "(XXX) XXX XX XX", no: newSt)
-        textField.text = "+90 \(formattedString)"
+        let formattedString = PhoneFormatter(mask: "+XX (XXX) XXX XX XX", no: newSt)
+        //textField.text = "+90 \(formattedString)"
+        textField.text = formattedString
         return false
     }
 }

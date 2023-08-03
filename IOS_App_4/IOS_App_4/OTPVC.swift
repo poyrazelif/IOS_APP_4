@@ -26,6 +26,7 @@ class OTPVC: UIViewController {
         let tf = CustomTextField()
         tf.delegate = self
         tf.layer.cornerRadius = 5
+        tf.textAlignment = .center
         return tf
     }()
     private lazy var txt2:CustomTextField =
@@ -33,6 +34,8 @@ class OTPVC: UIViewController {
         let tf = CustomTextField()
         tf.delegate = self
         tf.layer.cornerRadius = 5
+        tf.textAlignment = .center
+        
         return tf
     }()
     private lazy var txt3:CustomTextField =
@@ -40,6 +43,8 @@ class OTPVC: UIViewController {
         let tf = CustomTextField()
         tf.delegate = self
         tf.layer.cornerRadius = 5
+        tf.textAlignment = .center
+        
         return tf
     }()
     private lazy var txt4:CustomTextField =
@@ -47,6 +52,8 @@ class OTPVC: UIViewController {
         let tf = CustomTextField()
         tf.delegate = self
         tf.layer.cornerRadius = 5
+        tf.textAlignment = .center
+        
         return tf
     }()
     private lazy var svTexts:UIStackView =
@@ -120,5 +127,29 @@ class OTPVC: UIViewController {
 }
 extension OTPVC:UITextFieldDelegate
 {
-    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        if(textField == txt1) && range.length == 0
+        {
+            txt1.text = string
+            txt2.becomeFirstResponder()
+            
+        }
+        else if textField == txt2 && range.length == 0
+        {
+            txt2.text = string
+            txt3.becomeFirstResponder()
+        }
+        else if textField == txt3 && range.length == 0
+        {
+            txt3.text = string
+            txt4.becomeFirstResponder()
+        }
+        else if textField == txt4 && range.length == 0
+        {
+            txt4.text = string
+        }
+        
+        return false
+    }
 }
