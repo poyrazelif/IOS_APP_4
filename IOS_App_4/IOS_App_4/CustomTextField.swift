@@ -12,6 +12,7 @@ enum CustomFont:String
 {
     case Ariel = "Ariel Narrow"
     case TrebuchetMS = "Trebuchet MS"
+    case Avenirmedium = "AvenirNext-Medium"
     case Verdana = "Verdana"
     case VerdanaBold = "Verdana Bold"
     case DINAlternate = "DIN Alternate"

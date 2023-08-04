@@ -26,6 +26,9 @@
 		7A3550D82A7B903100F93AC4 /* TableViewSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3550D72A7B903100F93AC4 /* TableViewSample.swift */; };
 		7A3550DA2A7BBA8A00F93AC4 /* TableViewSample2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3550D92A7BBA8A00F93AC4 /* TableViewSample2.swift */; };
 		7A3550DC2A7BCB2B00F93AC4 /* TableViewSample3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3550DB2A7BCB2B00F93AC4 /* TableViewSample3.swift */; };
+		7A619E0D2A7CD7CC005AE3DA /* AddressInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A619E0C2A7CD7CC005AE3DA /* AddressInfo.swift */; };
+		7A619E0F2A7CDD64005AE3DA /* AddressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A619E0E2A7CDD64005AE3DA /* AddressVC.swift */; };
+		7A619E112A7CE08D005AE3DA /* AddressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A619E102A7CE08D005AE3DA /* AddressCell.swift */; };
 		8634AAAB2A7AE6D600B3DE72 /* Citys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8634AAAA2A7AE6D600B3DE72 /* Citys.swift */; };
 		8634AAAD2A7B596F00B3DE72 /* OTPVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8634AAAC2A7B596F00B3DE72 /* OTPVC.swift */; };
 /* End PBXBuildFile section */
@@ -69,6 +72,9 @@
 		7A3550D72A7B903100F93AC4 /* TableViewSample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewSample.swift; sourceTree = "<group>"; };
 		7A3550D92A7BBA8A00F93AC4 /* TableViewSample2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewSample2.swift; sourceTree = "<group>"; };
 		7A3550DB2A7BCB2B00F93AC4 /* TableViewSample3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewSample3.swift; sourceTree = "<group>"; };
+		7A619E0C2A7CD7CC005AE3DA /* AddressInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressInfo.swift; sourceTree = "<group>"; };
+		7A619E0E2A7CDD64005AE3DA /* AddressVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressVC.swift; sourceTree = "<group>"; };
+		7A619E102A7CE08D005AE3DA /* AddressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressCell.swift; sourceTree = "<group>"; };
 		8634AAAA2A7AE6D600B3DE72 /* Citys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Citys.swift; sourceTree = "<group>"; };
 		8634AAAC2A7B596F00B3DE72 /* OTPVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -136,6 +142,8 @@
 				7A3550D92A7BBA8A00F93AC4 /* TableViewSample2.swift */,
 				7A3550DB2A7BCB2B00F93AC4 /* TableViewSample3.swift */,
 				8634AAAC2A7B596F00B3DE72 /* OTPVC.swift */,
+				7A619E122A7D319B005AE3DA /* new_ex2 */,
+				7A619E0B2A7CD75B005AE3DA /* new_ex */,
 				7A1FD64E2A7A70850000888E /* Assets.xcassets */,
 				7A1FD6502A7A70850000888E /* LaunchScreen.storyboard */,
 				7A1FD6532A7A70850000888E /* Info.plist */,
@@ -167,6 +175,23 @@
 				7A1FD6822A7A7A070000888E /* Exo2-Bold.ttf */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		7A619E0B2A7CD75B005AE3DA /* new_ex */ = {
+			isa = PBXGroup;
+			children = (
+				7A619E0C2A7CD7CC005AE3DA /* AddressInfo.swift */,
+				7A619E0E2A7CDD64005AE3DA /* AddressVC.swift */,
+				7A619E102A7CE08D005AE3DA /* AddressCell.swift */,
+			);
+			path = new_ex;
+			sourceTree = "<group>";
+		};
+		7A619E122A7D319B005AE3DA /* new_ex2 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = new_ex2;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,6 +335,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A1FD6762A7A71AC0000888E /* CustomTextField.swift in Sources */,
+				7A619E112A7CE08D005AE3DA /* AddressCell.swift in Sources */,
+				7A619E0D2A7CD7CC005AE3DA /* AddressInfo.swift in Sources */,
 				7A3550DC2A7BCB2B00F93AC4 /* TableViewSample3.swift in Sources */,
 				8634AAAD2A7B596F00B3DE72 /* OTPVC.swift in Sources */,
 				7A1FD64A2A7A70820000888E /* ViewController.swift in Sources */,
@@ -317,6 +344,7 @@
 				7A1FD67A2A7A723D0000888E /* LoginVC.swift in Sources */,
 				7A1FD6872A7A7C880000888E /* CustomLabel.swift in Sources */,
 				7A1FD6462A7A70820000888E /* AppDelegate.swift in Sources */,
+				7A619E0F2A7CDD64005AE3DA /* AddressVC.swift in Sources */,
 				7A3550D82A7B903100F93AC4 /* TableViewSample.swift in Sources */,
 				7A1FD6482A7A70820000888E /* SceneDelegate.swift in Sources */,
 				7A1FD6782A7A71D40000888E /* CustomButton.swift in Sources */,
