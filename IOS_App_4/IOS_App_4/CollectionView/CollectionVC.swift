@@ -20,6 +20,7 @@ class CollectionVC: UIViewController {
         
         cv.delegate = self
         cv.dataSource = self
+       
         return cv
     }()
     
@@ -53,8 +54,8 @@ extension CollectionVC : UICollectionViewDataSource {
     
    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-          return  UICollectionViewCell()
+       return UICollectionViewCell()
     }
     
-    
+   
 }

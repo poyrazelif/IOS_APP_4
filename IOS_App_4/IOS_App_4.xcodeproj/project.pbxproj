@@ -27,6 +27,9 @@
 		7A3550DA2A7BBA8A00F93AC4 /* TableViewSample2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3550D92A7BBA8A00F93AC4 /* TableViewSample2.swift */; };
 		7A3550DC2A7BCB2B00F93AC4 /* TableViewSample3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3550DB2A7BCB2B00F93AC4 /* TableViewSample3.swift */; };
 		7A4520672A80E584005EA90F /* CollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4520662A80E584005EA90F /* CollectionVC.swift */; };
+		7A4520692A81026B005EA90F /* CollectionViewEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4520682A81026B005EA90F /* CollectionViewEx.swift */; };
+		7A45206B2A8104F4005EA90F /* CollectionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A45206A2A8104F4005EA90F /* CollectionData.swift */; };
+		7A45206D2A810785005EA90F /* CollectionVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A45206C2A810785005EA90F /* CollectionVCell.swift */; };
 		7A619E0D2A7CD7CC005AE3DA /* AddressInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A619E0C2A7CD7CC005AE3DA /* AddressInfo.swift */; };
 		7A619E0F2A7CDD64005AE3DA /* AddressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A619E0E2A7CDD64005AE3DA /* AddressVC.swift */; };
 		7A619E112A7CE08D005AE3DA /* AddressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A619E102A7CE08D005AE3DA /* AddressCell.swift */; };
@@ -75,6 +78,9 @@
 		7A3550D92A7BBA8A00F93AC4 /* TableViewSample2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewSample2.swift; sourceTree = "<group>"; };
 		7A3550DB2A7BCB2B00F93AC4 /* TableViewSample3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewSample3.swift; sourceTree = "<group>"; };
 		7A4520662A80E584005EA90F /* CollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionVC.swift; sourceTree = "<group>"; };
+		7A4520682A81026B005EA90F /* CollectionViewEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewEx.swift; sourceTree = "<group>"; };
+		7A45206A2A8104F4005EA90F /* CollectionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionData.swift; sourceTree = "<group>"; };
+		7A45206C2A810785005EA90F /* CollectionVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionVCell.swift; sourceTree = "<group>"; };
 		7A619E0C2A7CD7CC005AE3DA /* AddressInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressInfo.swift; sourceTree = "<group>"; };
 		7A619E0E2A7CDD64005AE3DA /* AddressVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressVC.swift; sourceTree = "<group>"; };
 		7A619E102A7CE08D005AE3DA /* AddressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressCell.swift; sourceTree = "<group>"; };
@@ -196,6 +202,9 @@
 			isa = PBXGroup;
 			children = (
 				7A4520662A80E584005EA90F /* CollectionVC.swift */,
+				7A4520682A81026B005EA90F /* CollectionViewEx.swift */,
+				7A45206A2A8104F4005EA90F /* CollectionData.swift */,
+				7A45206C2A810785005EA90F /* CollectionVCell.swift */,
 			);
 			path = CollectionView;
 			sourceTree = "<group>";
@@ -342,6 +351,7 @@
 			files = (
 				7A1FD6762A7A71AC0000888E /* CustomTextField.swift in Sources */,
 				7A619E112A7CE08D005AE3DA /* AddressCell.swift in Sources */,
+				7A45206D2A810785005EA90F /* CollectionVCell.swift in Sources */,
 				7A619E0D2A7CD7CC005AE3DA /* AddressInfo.swift in Sources */,
 				7A3550DC2A7BCB2B00F93AC4 /* TableViewSample3.swift in Sources */,
 				8634AAAD2A7B596F00B3DE72 /* OTPVC.swift in Sources */,
@@ -353,8 +363,10 @@
 				7A1FD6462A7A70820000888E /* AppDelegate.swift in Sources */,
 				7A619E0F2A7CDD64005AE3DA /* AddressVC.swift in Sources */,
 				7A3550D82A7B903100F93AC4 /* TableViewSample.swift in Sources */,
+				7A4520692A81026B005EA90F /* CollectionViewEx.swift in Sources */,
 				8634AAAF2A8045BC00B3DE72 /* EditPage.swift in Sources */,
 				7A1FD6482A7A70820000888E /* SceneDelegate.swift in Sources */,
+				7A45206B2A8104F4005EA90F /* CollectionData.swift in Sources */,
 				7A1FD6782A7A71D40000888E /* CustomButton.swift in Sources */,
 				7A3550DA2A7BBA8A00F93AC4 /* TableViewSample2.swift in Sources */,
 			);
