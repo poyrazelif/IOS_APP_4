@@ -12,9 +12,9 @@ class CustomLabel: UILabel {
     init()
     {
         super.init(frame: .zero)
-        self.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        self.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         self.text = "Temp Text"
-        self.textAlignment = .left
+        self.textAlignment = .center
         self.font = UIFont(name: CustomFont.Avenirmedium.rawValue, size: 14)
     }
     
