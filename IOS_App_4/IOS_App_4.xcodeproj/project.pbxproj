@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A0347DD2A825D1800FE26C6 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0347DC2A825D1800FE26C6 /* Person.swift */; };
+		7A0347DF2A825D7E00FE26C6 /* PersonTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0347DE2A825D7E00FE26C6 /* PersonTVCell.swift */; };
+		7A0347E12A825DAB00FE26C6 /* PersonMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0347E02A825DAB00FE26C6 /* PersonMainVC.swift */; };
+		7A0347E32A825DC500FE26C6 /* PersonDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0347E22A825DC500FE26C6 /* PersonDetailVC.swift */; };
 		7A1FD6462A7A70820000888E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1FD6452A7A70820000888E /* AppDelegate.swift */; };
 		7A1FD6482A7A70820000888E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1FD6472A7A70820000888E /* SceneDelegate.swift */; };
 		7A1FD64A2A7A70820000888E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1FD6492A7A70820000888E /* ViewController.swift */; };
@@ -56,6 +60,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7A0347DC2A825D1800FE26C6 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		7A0347DE2A825D7E00FE26C6 /* PersonTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTVCell.swift; sourceTree = "<group>"; };
+		7A0347E02A825DAB00FE26C6 /* PersonMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonMainVC.swift; sourceTree = "<group>"; };
+		7A0347E22A825DC500FE26C6 /* PersonDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailVC.swift; sourceTree = "<group>"; };
 		7A1FD6422A7A70820000888E /* IOS_App_4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IOS_App_4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A1FD6452A7A70820000888E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7A1FD6472A7A70820000888E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -116,9 +124,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7A0347DB2A825CF900FE26C6 /* PhoneApp */ = {
+			isa = PBXGroup;
+			children = (
+				7A0347DC2A825D1800FE26C6 /* Person.swift */,
+				7A0347DE2A825D7E00FE26C6 /* PersonTVCell.swift */,
+				7A0347E02A825DAB00FE26C6 /* PersonMainVC.swift */,
+				7A0347E22A825DC500FE26C6 /* PersonDetailVC.swift */,
+			);
+			path = PhoneApp;
+			sourceTree = "<group>";
+		};
 		7A1FD6392A7A70820000888E = {
 			isa = PBXGroup;
 			children = (
+				7A0347DB2A825CF900FE26C6 /* PhoneApp */,
 				7A1FD6442A7A70820000888E /* IOS_App_4 */,
 				7A1FD65B2A7A70860000888E /* IOS_App_4Tests */,
 				7A1FD6652A7A70860000888E /* IOS_App_4UITests */,
@@ -351,6 +371,7 @@
 			files = (
 				7A1FD6762A7A71AC0000888E /* CustomTextField.swift in Sources */,
 				7A619E112A7CE08D005AE3DA /* AddressCell.swift in Sources */,
+				7A0347E32A825DC500FE26C6 /* PersonDetailVC.swift in Sources */,
 				7A45206D2A810785005EA90F /* CollectionVCell.swift in Sources */,
 				7A619E0D2A7CD7CC005AE3DA /* AddressInfo.swift in Sources */,
 				7A3550DC2A7BCB2B00F93AC4 /* TableViewSample3.swift in Sources */,
@@ -359,6 +380,7 @@
 				8634AAAB2A7AE6D600B3DE72 /* Citys.swift in Sources */,
 				7A1FD67A2A7A723D0000888E /* LoginVC.swift in Sources */,
 				7A1FD6872A7A7C880000888E /* CustomLabel.swift in Sources */,
+				7A0347E12A825DAB00FE26C6 /* PersonMainVC.swift in Sources */,
 				7A4520672A80E584005EA90F /* CollectionVC.swift in Sources */,
 				7A1FD6462A7A70820000888E /* AppDelegate.swift in Sources */,
 				7A619E0F2A7CDD64005AE3DA /* AddressVC.swift in Sources */,
@@ -367,7 +389,9 @@
 				8634AAAF2A8045BC00B3DE72 /* EditPage.swift in Sources */,
 				7A1FD6482A7A70820000888E /* SceneDelegate.swift in Sources */,
 				7A45206B2A8104F4005EA90F /* CollectionData.swift in Sources */,
+				7A0347DD2A825D1800FE26C6 /* Person.swift in Sources */,
 				7A1FD6782A7A71D40000888E /* CustomButton.swift in Sources */,
+				7A0347DF2A825D7E00FE26C6 /* PersonTVCell.swift in Sources */,
 				7A3550DA2A7BBA8A00F93AC4 /* TableViewSample2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
