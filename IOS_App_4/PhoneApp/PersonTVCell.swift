@@ -15,10 +15,18 @@ class PersonTVCell: UITableViewCell {
         let lbl = CustomLabel()
         lbl.font = UIFont(name: "AvenirNextMedium", size: 18)
         lbl.textAlignment = .left
-        lbl.layer.borderColor = #colorLiteral(red: 0.9999999404, green: 0.9999999404, blue: 1, alpha: 0.6464891245)
-        lbl.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        lbl.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0)
+        lbl.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         return lbl
     }()
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        addSubviews()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -33,6 +41,7 @@ class PersonTVCell: UITableViewCell {
     
     func addSubviews() {
         self.contentView.addSubviews(lblName)
+        setLayout()
     }
     
     func setLayout()

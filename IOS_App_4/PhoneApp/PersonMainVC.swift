@@ -37,9 +37,9 @@ class PersonMainVC: UIViewController {
     
     private lazy var tvPersons:UITableView = {
         let tv = UITableView()
-        tv.backgroundColor = #colorLiteral(red: 0.07363332063, green: 0.1019082293, blue: 0.1103803441, alpha: 1)
+        tv.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         tv.delegate = self
-      //  tv.dataSource = self
+        tv.dataSource = self
         tv.rowHeight = UITableView.automaticDimension
         tv.estimatedRowHeight = 100
         tv.register(PersonTVCell.self, forCellReuseIdentifier: "PersonCell")
@@ -51,44 +51,51 @@ class PersonMainVC: UIViewController {
         setLayout()
     }
     func setLayout(){
-        tvPersons.edgesToSuperview(insets: .left(20) + .right(20) )
+        tvPersons.edgesToSuperview(insets: .top(16) + .bottom(16) + .left(20) + .right(20) )
     }
     override func viewDidLoad() {
-        SortPersons()
+        self.view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        extractPerson()
+        addSubviews()
     }
     
-    func SortPersons()
+    func extractPerson()
     {
         var tempArr:[Person] = []
         Letters.forEach({ letter in
+            tempArr = []
             tempArr = PersonList.filter({ Person in
-                Person.name.prefix(0) == letter
+                Person.name.prefix(1) == letter
             }).sorted(by: { $0.name < $1.name } )
-            personLetterArr.append(tempArr)
+            if !tempArr.isEmpty { personLetterArr.append(tempArr) }
+            
         })
-        
-        
-        
-        print(personLetterArr)
     }
         
 }
 extension PersonMainVC: UITableViewDelegate
 {
-    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat{
+        return 50
+    }
 }
-//extension PersonMainVC: UITableViewDataSource
-//{
-//    func numberOfSections(in tableView: UITableView) -> Int {
-//
-//    }
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//
-//    }
-//
-//
-//}
+extension PersonMainVC: UITableViewDataSource
+{
+    func numberOfSections(in tableView: UITableView) -> Int {
+        personLetterArr.count
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        personLetterArr[section].count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tvPersons.dequeueReusableCell(withIdentifier: "PersonCell", for: indexPath) as? PersonTVCell else { print("1")
+            return UITableViewCell()}
+        print(personLetterArr[indexPath.section][indexPath.row])
+       
+        cell.configureCell(person: personLetterArr[indexPath.section][indexPath.row])
+        return cell
+    }
+
+
+}
