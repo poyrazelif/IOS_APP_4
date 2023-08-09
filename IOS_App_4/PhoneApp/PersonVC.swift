@@ -8,8 +8,8 @@
 import UIKit
 import TinyConstraints
 
-class PersonMainVC: UIViewController {
-
+class PersonVC: UIViewController {
+    
     var PersonList: [Person] = [Person(name: "John", surname:  "Doe", phone: "+123456789", isWhatapps: true, isTelegram: false, image: UIImage(named: "person1")),
                                Person(name: "Jane", surname:  "Smith",phone: "+987654321", isWhatapps: true, isTelegram: true, image: UIImage(named: "person2")),
                                Person(name: "Michael", surname:  "Johnson",phone: "+555111222", isWhatapps: true, isTelegram: true, image: UIImage(named: "person3")),
@@ -46,6 +46,15 @@ class PersonMainVC: UIViewController {
         return tv
     }()
     
+    override func viewDidLoad() {
+        self.view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        self.navigationItem.title = "Persons"
+        self.navigationItem.largeTitleDisplayMode = .always
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        extractPerson()
+        addSubviews()
+    }
+  
     func addSubviews() {
         self.view.addSubview(tvPersons)
         setLayout()
@@ -53,11 +62,7 @@ class PersonMainVC: UIViewController {
     func setLayout(){
         tvPersons.edgesToSuperview(insets: .top(16) + .bottom(16) + .left(20) + .right(20) )
     }
-    override func viewDidLoad() {
-        self.view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        extractPerson()
-        addSubviews()
-    }
+
     
     func extractPerson()
     {
@@ -68,18 +73,32 @@ class PersonMainVC: UIViewController {
                 Person.name.prefix(1) == letter
             }).sorted(by: { $0.name < $1.name } )
             if !tempArr.isEmpty { personLetterArr.append(tempArr) }
-            
         })
     }
         
 }
-extension PersonMainVC: UITableViewDelegate
+extension PersonVC: UITableViewDelegate
 {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat{
         return 50
     }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let header = UIView()
+        let lbl = UILabel(frame: CGRect(x: 10, y: 10, width: 20, height: 15) )
+        lbl.font = UIFont(name: "AvenirNextMedium", size: 18)
+        lbl.textAlignment = .left
+        lbl.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0)
+        lbl.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        
+        guard let value = personLetterArr[section].first?.name.first else {return UIView()}
+
+        lbl.text = String(value)
+        header.addSubview(lbl)
+        return header
+    }
 }
-extension PersonMainVC: UITableViewDataSource
+extension PersonVC: UITableViewDataSource
 {
     func numberOfSections(in tableView: UITableView) -> Int {
         personLetterArr.count
@@ -96,6 +115,4 @@ extension PersonMainVC: UITableViewDataSource
         cell.configureCell(person: personLetterArr[indexPath.section][indexPath.row])
         return cell
     }
-
-
 }
