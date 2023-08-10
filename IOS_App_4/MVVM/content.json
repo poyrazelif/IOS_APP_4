@@ -1,0 +1,45 @@
+
+{
+    "current_page": 1,
+    "total_pages": 1000,
+    "total_items": 55697,
+    "profiles": [
+               {
+               "id": 230200335,
+               "name": "Elif",
+               "surname": "Poyraz",
+               "description": "mvvm test",
+               "age":"25"
+               "gender":"female"
+               },
+               {
+               "id": 130200330,
+               "name": "Ece",
+               "surname": "Poyraz",
+               "description": "mvvm test2",
+               "age":"29"
+               "gender":"female"
+               },
+               {
+               "id": 980200335,
+               "name": "Ahmet",
+               "surname": "Özgöztaşı",
+               "description": "mvvm test3",
+               "age":"7"
+               "gender":"male"
+               },
+               {
+               "id": 110200668,
+               "name": "Beren",
+               "surname": "Özgöztaşı",
+               "description": "mvvm test4",
+               "age":"5"
+               "gender":"female"
+               },
+               ],
+    "filters": {
+        "category": false,
+        "exclude": false
+    },
+    "feature": "popular"
+}

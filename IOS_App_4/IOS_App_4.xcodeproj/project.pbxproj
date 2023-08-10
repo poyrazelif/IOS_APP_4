@@ -42,6 +42,12 @@
 		7A619E0D2A7CD7CC005AE3DA /* AddressInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A619E0C2A7CD7CC005AE3DA /* AddressInfo.swift */; };
 		7A619E0F2A7CDD64005AE3DA /* AddressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A619E0E2A7CDD64005AE3DA /* AddressVC.swift */; };
 		7A619E112A7CE08D005AE3DA /* AddressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A619E102A7CE08D005AE3DA /* AddressCell.swift */; };
+		7AD452F02A84B8F000CEA413 /* UserDefaultSampleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD452EF2A84B8F000CEA413 /* UserDefaultSampleVC.swift */; };
+		7AD452F32A85061700CEA413 /* content.json in Resources */ = {isa = PBXBuildFile; fileRef = 7AD452F22A85061700CEA413 /* content.json */; };
+		7AD452F52A85062300CEA413 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD452F42A85062300CEA413 /* APIService.swift */; };
+		7AD452F72A85078F00CEA413 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD452F62A85078F00CEA413 /* Profile.swift */; };
+		7AD452F92A850CF700CEA413 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD452F82A850CF700CEA413 /* ProfileViewModel.swift */; };
+		7AD452FB2A850D0B00CEA413 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD452FA2A850D0B00CEA413 /* ProfileViewController.swift */; };
 		8634AAAB2A7AE6D600B3DE72 /* Citys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8634AAAA2A7AE6D600B3DE72 /* Citys.swift */; };
 		8634AAAD2A7B596F00B3DE72 /* OTPVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8634AAAC2A7B596F00B3DE72 /* OTPVC.swift */; };
 		8634AAAF2A8045BC00B3DE72 /* EditPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8634AAAE2A8045BC00B3DE72 /* EditPage.swift */; };
@@ -102,6 +108,12 @@
 		7A619E0C2A7CD7CC005AE3DA /* AddressInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressInfo.swift; sourceTree = "<group>"; };
 		7A619E0E2A7CDD64005AE3DA /* AddressVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressVC.swift; sourceTree = "<group>"; };
 		7A619E102A7CE08D005AE3DA /* AddressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressCell.swift; sourceTree = "<group>"; };
+		7AD452EF2A84B8F000CEA413 /* UserDefaultSampleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultSampleVC.swift; sourceTree = "<group>"; };
+		7AD452F22A85061700CEA413 /* content.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = content.json; sourceTree = "<group>"; };
+		7AD452F42A85062300CEA413 /* APIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		7AD452F62A85078F00CEA413 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		7AD452F82A850CF700CEA413 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		7AD452FA2A850D0B00CEA413 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		8634AAAA2A7AE6D600B3DE72 /* Citys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Citys.swift; sourceTree = "<group>"; };
 		8634AAAC2A7B596F00B3DE72 /* OTPVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPVC.swift; sourceTree = "<group>"; };
 		8634AAAE2A8045BC00B3DE72 /* EditPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPage.swift; sourceTree = "<group>"; };
@@ -153,6 +165,8 @@
 		7A1FD6392A7A70820000888E = {
 			isa = PBXGroup;
 			children = (
+				7AD452EF2A84B8F000CEA413 /* UserDefaultSampleVC.swift */,
+				7AD452F12A8505F300CEA413 /* MVVM */,
 				7A0347DB2A825CF900FE26C6 /* PhoneApp */,
 				7A1FD6442A7A70820000888E /* IOS_App_4 */,
 				7A1FD65B2A7A70860000888E /* IOS_App_4Tests */,
@@ -242,6 +256,18 @@
 				7A45206C2A810785005EA90F /* CollectionVCell.swift */,
 			);
 			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		7AD452F12A8505F300CEA413 /* MVVM */ = {
+			isa = PBXGroup;
+			children = (
+				7AD452F42A85062300CEA413 /* APIService.swift */,
+				7AD452F22A85061700CEA413 /* content.json */,
+				7AD452F62A85078F00CEA413 /* Profile.swift */,
+				7AD452F82A850CF700CEA413 /* ProfileViewModel.swift */,
+				7AD452FA2A850D0B00CEA413 /* ProfileViewController.swift */,
+			);
+			path = MVVM;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -356,6 +382,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AD452F32A85061700CEA413 /* content.json in Resources */,
 				7A1FD6832A7A7A070000888E /* Exo2-Bold.ttf in Resources */,
 				7A1FD6852A7A7A160000888E /* Exo2-Regular.ttf in Resources */,
 				7A1FD6522A7A70850000888E /* LaunchScreen.storyboard in Resources */,
@@ -402,13 +429,18 @@
 				7A1FD6462A7A70820000888E /* AppDelegate.swift in Sources */,
 				7A619E0F2A7CDD64005AE3DA /* AddressVC.swift in Sources */,
 				7A3550D82A7B903100F93AC4 /* TableViewSample.swift in Sources */,
+				7AD452F92A850CF700CEA413 /* ProfileViewModel.swift in Sources */,
 				7A4520692A81026B005EA90F /* CollectionViewEx.swift in Sources */,
 				8634AAAF2A8045BC00B3DE72 /* EditPage.swift in Sources */,
 				7A3C44FE2A83CAC000B9D4F8 /* LatestCallsVC.swift in Sources */,
 				7A3C45002A83CAEA00B9D4F8 /* KeypadVC.swift in Sources */,
 				7A1FD6482A7A70820000888E /* SceneDelegate.swift in Sources */,
+				7AD452FB2A850D0B00CEA413 /* ProfileViewController.swift in Sources */,
 				7A45206B2A8104F4005EA90F /* CollectionData.swift in Sources */,
 				7A0347DD2A825D1800FE26C6 /* Person.swift in Sources */,
+				7AD452F72A85078F00CEA413 /* Profile.swift in Sources */,
+				7AD452F02A84B8F000CEA413 /* UserDefaultSampleVC.swift in Sources */,
+				7AD452F52A85062300CEA413 /* APIService.swift in Sources */,
 				7A1FD6782A7A71D40000888E /* CustomButton.swift in Sources */,
 				7A3C44FA2A83C86F00B9D4F8 /* PersonTabBarController.swift in Sources */,
 				7A0347DF2A825D7E00FE26C6 /* PersonTVCell.swift in Sources */,
