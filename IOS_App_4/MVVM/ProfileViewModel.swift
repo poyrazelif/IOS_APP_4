@@ -17,18 +17,21 @@ struct ProfileListCellViewModel {
 class ProfileViewModel {
     
     let apiService : APIServiceProtocol
-    
+    var reloadtableView: (()->())? // yeniden yükleme closure ı içerisi vc de doldurulacak şekilde tanımlandı
+    private lazy var numberOfTows = 0
+    //profiller array i
     private var profiles = [Profile]()
     
+    // cell lere verilmek üzere oluşturulan model struct ından cell bilgisi struct array i oluşturuldu
+    // did set ile model struct dizisinde değişiklik olursa reloadtableview closure ı tetiklenecek ve tanımlandığı yerde tanımlandığı şekilde çalışacak
     private var cellViewModels: [ProfileListCellViewModel] = [ProfileListCellViewModel]()
-   {
+    {
        didSet {
                 self.reloadtableView?()
               }
     }
     
-    var reloadtableView: (()->())?
-    init(apiService: APIServiceProtocol) {
+    init(apiService: APIServiceProtocol = APIService()) {
         self.apiService = apiService
     }
     

@@ -51,6 +51,7 @@
 		8634AAAB2A7AE6D600B3DE72 /* Citys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8634AAAA2A7AE6D600B3DE72 /* Citys.swift */; };
 		8634AAAD2A7B596F00B3DE72 /* OTPVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8634AAAC2A7B596F00B3DE72 /* OTPVC.swift */; };
 		8634AAAF2A8045BC00B3DE72 /* EditPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8634AAAE2A8045BC00B3DE72 /* EditPage.swift */; };
+		8662EDAC2A85828500EF857A /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8662EDAB2A85828500EF857A /* ProfileTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +118,7 @@
 		8634AAAA2A7AE6D600B3DE72 /* Citys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Citys.swift; sourceTree = "<group>"; };
 		8634AAAC2A7B596F00B3DE72 /* OTPVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPVC.swift; sourceTree = "<group>"; };
 		8634AAAE2A8045BC00B3DE72 /* EditPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPage.swift; sourceTree = "<group>"; };
+		8662EDAB2A85828500EF857A /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -266,6 +268,7 @@
 				7AD452F62A85078F00CEA413 /* Profile.swift */,
 				7AD452F82A850CF700CEA413 /* ProfileViewModel.swift */,
 				7AD452FA2A850D0B00CEA413 /* ProfileViewController.swift */,
+				8662EDAB2A85828500EF857A /* ProfileTableViewCell.swift */,
 			);
 			path = MVVM;
 			sourceTree = "<group>";
@@ -419,6 +422,7 @@
 				7A619E0D2A7CD7CC005AE3DA /* AddressInfo.swift in Sources */,
 				7A3550DC2A7BCB2B00F93AC4 /* TableViewSample3.swift in Sources */,
 				8634AAAD2A7B596F00B3DE72 /* OTPVC.swift in Sources */,
+				8662EDAC2A85828500EF857A /* ProfileTableViewCell.swift in Sources */,
 				7A1FD64A2A7A70820000888E /* ViewController.swift in Sources */,
 				8634AAAB2A7AE6D600B3DE72 /* Citys.swift in Sources */,
 				7A1FD67A2A7A723D0000888E /* LoginVC.swift in Sources */,
