@@ -14,6 +14,7 @@ class ProfileTableViewCell: UITableViewCell {
         let l = CustomLabel()
         l.textAlignment = .left
         l.font = UIFont(name: CustomFont.Exo2Regular.rawValue, size: 12)
+        l.numberOfLines = 0
         return l
     }()
     
@@ -21,11 +22,18 @@ class ProfileTableViewCell: UITableViewCell {
         super.awakeFromNib()
         
     }
-
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        self.contentView.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        addSubviews()
+        
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
-        addSubviews()
         
     }
     
@@ -40,12 +48,12 @@ class ProfileTableViewCell: UITableViewCell {
         lblProfile.edgesToSuperview(excluding: [.top,.bottom], insets: .left(16) + .right(16))
     }
     
-    func configure(profile:Profile)
+    func configure(cellModel: ProfileListCellViewModel)
     {
         lblProfile.text = """
-                            \(profile.name) + \(profile.surname)
-                            \(profile.age)
-                            \(profile.gender)
+                            \(cellModel.nameText)  \(cellModel.surnameText)
+                            \(cellModel.ageText)
+                            \(cellModel.genderText)
                           """
     }
     

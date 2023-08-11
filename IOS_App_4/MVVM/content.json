@@ -9,7 +9,7 @@
                "name": "Elif",
                "surname": "Poyraz",
                "description": "mvvm test",
-               "age":"25"
+               "age":"25",
                "gender":"female"
                },
                {
@@ -17,7 +17,7 @@
                "name": "Ece",
                "surname": "Poyraz",
                "description": "mvvm test2",
-               "age":"29"
+               "age":"29",
                "gender":"female"
                },
                {
@@ -25,7 +25,7 @@
                "name": "Ahmet",
                "surname": "Özgöztaşı",
                "description": "mvvm test3",
-               "age":"7"
+               "age":"7",
                "gender":"male"
                },
                {
@@ -33,9 +33,9 @@
                "name": "Beren",
                "surname": "Özgöztaşı",
                "description": "mvvm test4",
-               "age":"5"
+               "age":"5",
                "gender":"female"
-               },
+               }
                ],
     "filters": {
         "category": false,

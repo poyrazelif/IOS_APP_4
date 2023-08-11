@@ -16,6 +16,7 @@ enum APIError: String, Error {
 
 protocol APIServiceProtocol {
     func fetchProfiles( complete: @escaping ( _ success: Bool, _ profiles: [Profile], _ error: APIError? )->() )
+    // escaping asenkron çalışan closuredan gelecek olan veri geldi
 }
 
 class APIService: APIServiceProtocol {
@@ -28,7 +29,8 @@ class APIService: APIServiceProtocol {
             let decoder = JSONDecoder()
             decoder.dateDecodingStrategy = .iso8601
             let profiles = try! decoder.decode(Profiles.self, from: data)
-            complete( true, profiles.profiles, nil )
+            complete( true, profiles.profiles, .noNetwork )
+
         }
     }
     

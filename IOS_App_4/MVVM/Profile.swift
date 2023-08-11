@@ -14,6 +14,6 @@ struct Profile: Codable  {
     let id: Int
     let name: String
     let surname: String
-    let age: Int
+    let age: String
     let gender: String
 }
